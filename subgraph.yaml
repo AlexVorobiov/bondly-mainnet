@@ -5,11 +5,116 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: IERC1155
+    name: BCCG
     network: mainnet
     source:
       abi: IERC1155
-      startBlock: 6930510
+      address: "0xe3782b8688ad2b0d5ba42842d400f7adf310f88d"
+      startBlock: 11271036
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Token
+      abis:
+        - name: IERC1155
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC1155.json
+        - name: IERC1155MetadataURI
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC1155MetadataURI.json
+      eventHandlers:
+        - event: TransferBatch(indexed address,indexed address,indexed address,uint256[],uint256[])
+          handler: handleTransferBatch
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+        - event: URI(string,indexed uint256)
+          handler: handleURI
+      file: ./src/index.ts
+  - kind: ethereum/contract
+    name: PolkaPet
+    network: mainnet
+    source:
+      abi: IERC1155
+      address: "0xba8cdaa1c4c294ad634ab3c6ee0fa82d0a019727"
+      startBlock: 11734527
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Token
+      abis:
+        - name: IERC1155
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC1155.json
+        - name: IERC1155MetadataURI
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC1155MetadataURI.json
+      eventHandlers:
+        - event: TransferBatch(indexed address,indexed address,indexed address,uint256[],uint256[])
+          handler: handleTransferBatch
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+        - event: URI(string,indexed uint256)
+          handler: handleURI
+      file: ./src/index.ts
+  - kind: ethereum/contract
+    name: Tory Lanez
+    network: mainnet
+    source:
+      abi: IERC1155
+      address: "0x47dd306909fcd7cd22dfbf2548f7e43a8594b243"
+      startBlock: 11972562 
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Token
+      abis:
+        - name: IERC1155
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC1155.json
+        - name: IERC1155MetadataURI
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC1155MetadataURI.json
+      eventHandlers:
+        - event: TransferBatch(indexed address,indexed address,indexed address,uint256[],uint256[])
+          handler: handleTransferBatch
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+        - event: URI(string,indexed uint256)
+          handler: handleURI
+      file: ./src/index.ts
+  - kind: ethereum/contract
+    name: Logan Paul
+    network: mainnet
+    source:
+      abi: IERC1155
+      address: "0x0c69326bea87398a12be5d3224bd37ac64b30b76"
+      startBlock: 11884645 
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Token
+      abis:
+        - name: IERC1155
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC1155.json
+        - name: IERC1155MetadataURI
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC1155MetadataURI.json
+      eventHandlers:
+        - event: TransferBatch(indexed address,indexed address,indexed address,uint256[],uint256[])
+          handler: handleTransferBatch
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+        - event: URI(string,indexed uint256)
+          handler: handleURI
+      file: ./src/index.ts
+  - kind: ethereum/contract
+    name: Pellek Digital
+    network: mainnet
+    source:
+      abi: IERC1155
+      address: "0xe3ea3eafe3fc255f3ebc5b6a2b3345e59e3f2c78"
+      startBlock: 11982975  
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
